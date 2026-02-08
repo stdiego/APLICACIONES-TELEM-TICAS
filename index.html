@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telematics | Secure App Dev</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Terminal Background Mesh -->
+    <div class="matrix-bg"></div>
+
+    <!-- Layout -->
+    <div class="app-layout">
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sys-id">
+                <i class="fas fa-terminal"></i>
+                <span>DEV.OPS<br><span class="status">ONLINE</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#specs" class="active"><i class="fas fa-ruler-combined"></i> Ingeniería & Specs</a></li>
+                <li><a href="#stack"><i class="fas fa-layer-group"></i> Stack Tecnológico</a></li>
+                <li><a href="#uml"><i class="fas fa-project-diagram"></i> Diseño (UML)</a></li>
+                <li><a href="#backend"><i class="fas fa-code"></i> Implementación</a></li>
+            </ul>
+            <div class="server-status">
+                <div class="status-item"><span>Apache</span> <span class="badge green">Running</span></div>
+                <div class="status-item"><span>MySQL</span> <span class="badge green">Running</span></div>
+                <div class="status-item"><span>PHP</span> <span class="badge blue">v7.4</span></div>
+            </div>
+            <div class="compliance-badge">
+                <i class="fas fa-check-shield"></i> IEEE 830 Compliant
+            </div>
+        </nav>
+
+        <!-- Main Workspace -->
+        <main class="content-area">
+
+            <header class="project-header">
+                <div class="header-led"></div>
+                <h1>Sistema de Gestión de Usuarios <span class="version">v1.2.0</span></h1>
+                <p>Especificación Técnica de Aplicación Telemática bajo modelo Cliente-Servidor.</p>
+            </header>
+
+            <!-- MODULE 1: INGENIERÍA & SPECS -->
+            <section id="specs" class="module-card">
+                <div class="card-bar">
+                    <span class="card-title">root@server:~/docs/specs/system_requirements.md</span>
+                </div>
+                <div class="card-body">
+                    <h2><i class="fas fa-drafting-compass"></i> Especificación Técnica y Normativa</h2>
+                    <p class="theory-text">
+                        El desarrollo se rige por estándares de ingeniería para garantizar interoperabilidad telemática
+                        y rendimiento. Se define el <strong>hardware de despliegue</strong> y los <strong>protocolos de
+                            comunicación</strong> utilizados.
+                    </p>
+
+                    <div class="specs-grid">
+                        <!-- Technical Requirements -->
+                        <div class="spec-box hardware">
+                            <h3><i class="fas fa-microchip"></i> Requisitos de Infraestructura (Host)</h3>
+                            <table class="spec-table">
+                                <tr>
+                                    <td>Procesador</td>
+                                    <td>x86/x64 Dual Core @ 1.9 GHz+ (SSE2)</td>
+                                </tr>
+                                <tr>
+                                    <td>Memoria RAM</td>
+                                    <td>2 GB Mínimo (Reservado para Apache/MySQL)</td>
+                                </tr>
+                                <tr>
+                                    <td>Storage</td>
+                                    <td>250 MB (Logs + Base de Datos)</td>
+                                </tr>
+                                <tr>
+                                    <td>OS Support</td>
+                                    <td>Windows Server / Linux (CentOS/Ubuntu)</td>
+                                </tr>
+                            </table>
+                            <div class="spec-note">Base: Documento de Requisitos Técnicos Fase 4</div>
+                        </div>
+
+                        <!-- Protocols & Standards -->
+                        <div class="spec-box theory">
+                            <h3><i class="fas fa-book"></i> Fundamentación y Protocolos</h3>
+                            <div class="protocol-list">
+                                <div class="p-item">
+                                    <strong><i class="fas fa-network-wired"></i> HTTP/1.1 (RFC 2616):</strong>
+                                    <p>Protocolo de capa de aplicación sin estado. Se utiliza arquitectura
+                                        <strong>RESTful</strong> teórica para las peticiones GET/POST del formulario de
+                                        login.</p>
+                                </div>
+                                <div class="p-item">
+                                    <strong><i class="fas fa-database"></i> ACID (Base de Datos):</strong>
+                                    <p>Garantía de Atomicidad, Consistencia, Aislamiento y Durabilidad en transacciones
+                                        MySQL, crítico para la integridad de datos de usuarios.</p>
+                                </div>
+                                <div class="p-item">
+                                    <strong><i class="fas fa-file-contract"></i> IEEE 830 (SRS):</strong>
+                                    <p>Adopción de buenas prácticas de especificación de requisitos de software
+                                        (Funcionales y No Funcionales).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MODULE 2: STACK & ARCHITECTURE -->
+            <section id="stack" class="module-card">
+                <div class="card-bar">
+                    <span class="card-title">root@server:~/docs/architecture</span>
+                </div>
+                <div class="card-body">
+                    <h2><i class="fas fa-server"></i> Arquitectura del Sistema (LAMP)</h2>
+                    <p class="theory-text">
+                        Implementación de una <strong>Arquitectura de 3 Capas (Three-Tier)</strong>, desacoplando la
+                        lógica de presentación (Client), la lógica de negocio (App Server) y el acceso a datos
+                        (Persistence).
+                    </p>
+
+                    <div class="stack-grid">
+                        <div class="stack-item">
+                            <div class="icon-box"><i class="fas fa-laptop"></i></div>
+                            <h3>Capa Cliente</h3>
+                            <p><strong>Frontend:</strong> HTML5 Semántico + CSS3. Responsable de la UI y validación de
+                                formularios pre-envío.</p>
+                        </div>
+                        <div class="arrow-right"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="stack-item core">
+                            <div class="icon-box"><i class="fas fa-cogs"></i></div>
+                            <h3>Capa Lógica</h3>
+                            <p><strong>Backend:</strong> PHP 7.4 sobre Apache Web Server. Gestiona sesiones, cookies y
+                                sanitización de inputs.</p>
+                        </div>
+                        <div class="arrow-right"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="stack-item">
+                            <div class="icon-box"><i class="fas fa-database"></i></div>
+                            <h3>Capa de Datos</h3>
+                            <p><strong>Persistencia:</strong> MySQL (InnoDB Engine). Almacena credenciales y perfiles en
+                                esquema relacional.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MODULE 3: DESIGN (UML) -->
+            <section id="uml" class="module-card">
+                <div class="card-bar">
+                    <span class="card-title">root@server:~/design/uml_diagrams</span>
+                </div>
+                <div class="card-body">
+                    <h2><i class="fas fa-sitemap"></i> Ingeniería de Software (Diseño)</h2>
+                    <p class="theory-text">Antes de la codificación, se modeló el flujo de datos para detectar
+                        condiciones de carrera y fallos lógicos.</p>
+
+                    <div class="uml-container">
+                        <div class="uml-box">
+                            <h3>Diagrama de Secuencia (Auth Flow)</h3>
+                            <div class="sequence-chart">
+                                <div class="lifeline user">
+                                    <div class="head">Usuario</div>
+                                    <div class="line"></div>
+                                </div>
+                                <div class="lifeline system">
+                                    <div class="head">Controlador (PHP)</div>
+                                    <div class="line"></div>
+                                </div>
+                                <div class="lifeline db">
+                                    <div class="head">Modelo (BD)</div>
+                                    <div class="line"></div>
+                                </div>
+
+                                <!-- Messages -->
+                                <div class="msg m1"><span>1. POST /login (user, pass)</span> <i
+                                        class="fas fa-arrow-right"></i></div>
+                                <div class="msg m2"><span>2. SELECT * FROM usuario</span> <i
+                                        class="fas fa-arrow-right"></i></div>
+                                <div class="msg m3"><i class="fas fa-arrow-left"></i> <span>3. ResultSet (Row
+                                        found)</span></div>
+                                <div class="msg m4"><i class="fas fa-arrow-left"></i> <span>4.
+                                        session_start(token)</span></div>
+                            </div>
+                        </div>
+                        <div class="uml-notes">
+                            <ul>
+                                <li><strong>Validación Lógica:</strong> El diagrama asegura que no se crea sesión si el
+                                    ResultSet retorna null.</li>
+                                <li><strong>Encapsulamiento:</strong> La contraseña viaja en el cuerpo del POST, no en
+                                    la URL (Seguridad por diseño).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MODULE 4: IMPLEMENTATION & SECURITY -->
+            <section id="backend" class="module-card">
+                <div class="card-bar">
+                    <span class="card-title">root@server:~/src/security_module.php</span>
+                </div>
+                <div class="card-body">
+                    <h2><i class="fas fa-code"></i> Implementación & Seguridad</h2>
+
+                    <div class="code-terminal">
+                        <div class="line"><span class="num">1</span> <span class="kwd">
+                                <?php</span></div>
+                        <div class="line"><span class="num">2</span> <span class="cmt">// SEGURIDAD: Conexión aislada y verificación de errores</span></div>
+                        <div class="line"><span class="num">3</span> <span class="var">$server</span> = <span class="str">"localhost"</span>; <span class="cmt">// Loopback Interface</span></div>
+                        <div class="line"><span class="num">4</span> <span class="var">$db</span> = <span class="str">"MiEsquema"</span>;</div>
+                        <div class="line"><span class="num">5</span></div>
+                        <div class="line"><span class="num">6</span> <span class="var">$conn</span> = <span class="func">mysqli_connect</span>(<span class="var">$server</span>, <span class="str">"root"</span>, <span class="str">"***"</span>, <span class="var">$db</span>);</div>
+                        <div class="line"><span class="num">7</span></div>
+                        <div class="line"><span class="num">8</span> <span class="kwd">if</span> (!<span class="var">$conn</span>) {</div>
+                        <div class="line"><span class="num">9</span>    <span class="cmt">// Log error to system, do not echo to user (Security Through Obscurity)</span></div>
+                        <div class="line"><span class="num">10</span>    <span class="func">error_log</span>(<span class="str">"DB Conn Failure: "</span> . <span class="func">mysqli_connect_error</span>());</div>
+                        <div class="line"><span class="num">11</span>    <span class="func">die</span>(<span class="str">"Error interno del servidor (500)"</span>);</div>
+                        <div class="line"><span class="num">12</span> }</div>
+                        <div class="line"><span class="num">13</span> <span class="kwd">?>
+                            </span></div>
+                    </div>
+
+                    <div class="feature-list">
+                        <div class="feature">
+                            <span class="f-icon"><i class="fas fa-lock"></i></span>
+                            <div class="f-info">
+                                <strong>Gestión de Sesiones (State Management)</strong>
+                                <small>La naturaleza "stateless" de HTTP se mitiga mediante <code>session_start()</code>
+                                    para persistir la autenticación del Admin.</small>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <span class="f-icon"><i class="fas fa-shield-alt"></i></span>
+                            <div class="f-info">
+                                <strong>Sanitización de Datos</strong>
+                                <small>Prevención de SQL Injection validando los inputs antes de construir la query a la
+                                    tabla <code>usuario</code>.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+
+</html>
